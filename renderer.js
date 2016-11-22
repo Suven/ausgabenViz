@@ -16,8 +16,8 @@ const fs = require('fs')
 const parse = require('csv-parse')
 
 function simplifyData(set) {
-  let date = set['Valuta-Datum']
-  let amount = set['Betrag']
+  let date = set['Valuta-Datum'] || set['Value date']
+  let amount = set['Betrag'] || set['Amount']
 
   amount = amount.replace(',', '.')
   amount = parseFloat(amount)
